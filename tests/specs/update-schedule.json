@@ -1,19 +1,26 @@
 [
   {
-    "name": "/update_schedule",
+    "name": "/update_schedule command shows setup prompt when not configured",
     "steps": [
       {
+        "send": { "text": "/update_schedule" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "Submit a revised schedule document for processing"
+              "text": "⚠️ You haven't set up the bot yet. Please run /start to configure your channel and schedule first."
             }
           }
-        ],
-        "send": {
-          "text": "/update_schedule"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Update schedule button shows schedule prompt when configured",
+    "steps": [
+      {
+        "send": { "callback": "schedule:update" },
+        "expect": [{ "method": "editMessageText" }]
       }
     ]
   }
