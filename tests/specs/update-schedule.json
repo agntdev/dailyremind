@@ -1,0 +1,20 @@
+[
+  {
+    "name": "/update_schedule",
+    "steps": [
+      {
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "Submit a revised schedule document for processing"
+            }
+          }
+        ],
+        "send": {
+          "text": "/update_schedule"
+        }
+      }
+    ]
+  }
+]
