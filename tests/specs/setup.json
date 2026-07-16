@@ -1,0 +1,38 @@
+[
+  {
+    "name": "setup button starts the onboarding flow",
+    "steps": [
+      {
+        "send": { "callback": "setup:start" },
+        "expect": [
+          {
+            "method": "editMessageText",
+            "payload": {
+              "text": "⚙️ Let's set up your reminder bot.\n\nFirst, I need the Telegram channel where reminders will be posted.\n\nPlease send me the channel's username (e.g. @mychannel) or its numeric ID (e.g. -1001234567890).\n\nNote: You must add this bot as an administrator in the channel with posting permissions."
+            }
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "setup rejects invalid channel format",
+    "steps": [
+      {
+        "send": { "callback": "setup:start" },
+        "expect": [{ "method": "editMessageText" }]
+      },
+      {
+        "send": { "text": "invalid channel" },
+        "expect": [
+          {
+            "method": "sendMessage",
+            "payload": {
+              "text": "That doesn't look like a valid channel. Use a @username or numeric ID (e.g. -1001234567890)."
+            }
+          }
+        ]
+      }
+    ]
+  }
+]

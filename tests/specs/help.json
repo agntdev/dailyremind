@@ -8,7 +8,7 @@
           {
             "method": "sendMessage",
             "payload": {
-              "text": "ℹ️ Tap /start to open the menu, then pick what you want from the buttons.\n\nEverything in this bot is reachable by tapping — you don't need to remember any commands."
+              "text": "ℹ️ How to use this bot:\n\n1. Tap ⚙️ Setup to connect your channel and add your schedule\n2. Reminders are posted automatically at scheduled times\n3. Tap 📅 Update schedule to change your reminders\n4. Tap 📊 Status to see logs and configuration\n\nNeed help? Tap /start to open the menu."
             }
           }
         ]

@@ -1,19 +1,26 @@
 [
   {
-    "name": "/status",
+    "name": "/status shows bot status",
     "steps": [
       {
+        "send": { "text": "/status" },
         "expect": [
           {
             "method": "sendMessage",
             "payload": {
-              "text": "View persistent logs of sent reminders and failures"
+              "text": "📊 Status\n\nBot is not configured yet. Tap ⚙️ Setup to get started."
             }
           }
-        ],
-        "send": {
-          "text": "/status"
-        }
+        ]
+      }
+    ]
+  },
+  {
+    "name": "Status button shows bot status",
+    "steps": [
+      {
+        "send": { "callback": "status:show" },
+        "expect": [{ "method": "editMessageText" }]
       }
     ]
   }
